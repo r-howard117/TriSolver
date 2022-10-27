@@ -1,0 +1,3 @@
+from Functions import solve, print_triangle
+
+#I don't know how to make a proper test file...
