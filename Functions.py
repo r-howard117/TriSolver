@@ -116,7 +116,6 @@ def aas(A, B, a, order):
         b = law_of_sin_side(B, A, a)
         result = [a, b, c, A, B, C]
         result = [result[i] for i in order]
-        #result = degree_all(result)
     except:
         result = "Math Domain Error"
     return result
@@ -141,20 +140,20 @@ def ssa(a, b, A, order):
 
         result = [a, b, c, A, B, C]
         result = [result[i] for i in order]
-        result = triangle_check(*tuple(result))
+        result = triangle_check(*result,)
         if acute == True:
             B2 = pi - B
             C2 = third_angle(A, B2)
             c2 = law_of_sin_side(C2, A, a)
             second_values = [a, b, c2, A, B2, C2]
-            second_values = triangle_check(*tuple(second_values))
+            second_values = triangle_check(*second_values,)
             if type(second_values) != str:
                 second_values = degree_all(second_values)
                 second_values = [second_values[i] for i in order]
                 result = degree_all(result)
                 result = (result, second_values)
-            else:
-                result = degree_all(result)
+            #else:
+                #result = degree_all(result)
     except:
         result = "Math Domain Error"
     
